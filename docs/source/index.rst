@@ -3,6 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+* :ref:`mydocs`
+* :ref:`search`
+
+
 Welcome to test's documentation!
 ================================
 
@@ -18,7 +22,5 @@ Contents:
 
 Indices and tables
 ==================
-* :ref:'mydocs'
-* :ref:`search`
 
 test index3
