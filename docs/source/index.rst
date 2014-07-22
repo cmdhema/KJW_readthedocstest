@@ -23,4 +23,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-test index
+test index2
