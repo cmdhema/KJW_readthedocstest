@@ -199,6 +199,8 @@ latex_elements = {
 latex_documents = [
   ('index', 'test.tex', 'test Documentation',
    'kjw', 'manual'),
+  ('index2', 'test.tex', 'test Documentation',
+   'kjw', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -228,7 +230,10 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'test', 'test Documentation',
-     ['kjw'], 1)
+     ['kjw'], 1) ,
+    ('index2', 'test', 'test Documentation',
+     ['kjw'], 2)
+     
 ]
 
 # If true, show URL addresses after external links.
