@@ -228,7 +228,10 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'test', 'test Documentation',
+     ['kjw'], 1) ,
+    ('index2', 'test', 'test Documentation',
      ['kjw'], 1)
+     
 ]
 
 # If true, show URL addresses after external links.
