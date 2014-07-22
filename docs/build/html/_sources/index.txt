@@ -7,6 +7,7 @@ Welcome to test's documentation!
 ================================
 
 Contents:
+.. _mydocs:
 
 .. toctree::
    :maxdepth: 2
@@ -15,12 +16,9 @@ Contents:
    test2
 
 
-
 Indices and tables
 ==================
-
-* :ref:`genindex`
-* :ref:`modindex`
+* :ref:'mydocs'
 * :ref:`search`
 
-test index2
+test index3
