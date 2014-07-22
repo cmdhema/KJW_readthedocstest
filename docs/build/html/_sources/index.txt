@@ -10,6 +10,9 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   
+   test1
+   test2
 
 
 
@@ -20,6 +23,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-This is test...
-1234
-1111
+This is test2222...
