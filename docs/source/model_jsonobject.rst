@@ -215,7 +215,6 @@ Example::
                 "defaultValue": null
             }
         },
-        ...
     }
   }  
 
