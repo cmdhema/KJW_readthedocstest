@@ -308,164 +308,118 @@ actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 �
 <p>Upnp 디바이스에 제어 메시지를 보냈을 때(Action)에 대한 응답 객체입니다.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre>{
+  &quot;NewRemoteHost&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewRemoteHost&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;RemoteHost&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;STRING&quot;
+      },
+      &quot;value&quot;: null
+  },
+  &quot;NewExternalPort&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewExternalPort&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;ExternalPort&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;UI2&quot;
+      },
+      &quot;value&quot;: {
+          &quot;value&quot;: 8123
+      }
+  },
+  &quot;NewProtocol&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewProtocol&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;PortMappingProtocol&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;STRING&quot;
+      },
+      &quot;value&quot;: &quot;TCP&quot;
+  },
+  &quot;NewInternalPort&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewInternalPort&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;InternalPort&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;UI2&quot;
+      },
+      &quot;value&quot;: {
+          &quot;value&quot;: 8123
+      }
+  },
+  &quot;NewInternalClient&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewInternalClient&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;InternalClient&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;STRING&quot;
+      },
+      &quot;value&quot;: &quot;127.0.0.1&quot;
+  },
+  &quot;NewEnabled&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewEnabled&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;PortMappingEnabled&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;BOOLEAN&quot;
+      },
+      &quot;value&quot;: true
+  },
+  &quot;NewPortMappingDescription&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewPortMappingDescription&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;PortMappingDescription&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;STRING&quot;
+      },
+      &quot;value&quot;: &quot;HHC Port Mapping&quot;
+  },
+  &quot;NewLeaseDuration&quot;: {
+      &quot;argument&quot;: {
+          &quot;aliases&quot;: [],
+          &quot;direction&quot;: &quot;OUT&quot;,
+          &quot;name&quot;: &quot;NewLeaseDuration&quot;,
+          &quot;relatedStateVariableName&quot;: &quot;PortMappingLeaseDuration&quot;,
+          &quot;returnValue&quot;: false
+      },
+      &quot;datatype&quot;: {
+          &quot;builtin&quot;: &quot;UI4&quot;
+      },
+      &quot;value&quot;: {
+          &quot;value&quot;: 0
+      }
+  }
 </pre></div>
 </div>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;NewRemoteHost&#8221;: {</dt>
-<dd><dl class="first docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewRemoteHost&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;RemoteHost&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
-<p class="last">},
-&#8220;value&#8221;: null</p>
-</dd>
-</dl>
-<p>},
-&#8220;NewExternalPort&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewExternalPort&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;ExternalPort&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;UI2&#8221;</div></blockquote>
-<p>},
-&#8220;value&#8221;: {</p>
-<blockquote>
-<div>&#8220;value&#8221;: 8123</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-&#8220;NewProtocol&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewProtocol&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingProtocol&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
-<p>},
-&#8220;value&#8221;: &#8220;TCP&#8221;</p>
-</div></blockquote>
-<p>},
-&#8220;NewInternalPort&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewInternalPort&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;InternalPort&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;UI2&#8221;</div></blockquote>
-<p>},
-&#8220;value&#8221;: {</p>
-<blockquote>
-<div>&#8220;value&#8221;: 8123</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-&#8220;NewInternalClient&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewInternalClient&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;InternalClient&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
-<p>},
-&#8220;value&#8221;: &#8220;127.0.0.1&#8221;</p>
-</div></blockquote>
-<p>},
-&#8220;NewEnabled&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewEnabled&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingEnabled&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;BOOLEAN&#8221;</div></blockquote>
-<p>},
-&#8220;value&#8221;: true</p>
-</div></blockquote>
-<p>},
-&#8220;NewPortMappingDescription&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewPortMappingDescription&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingDescription&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
-<p>},
-&#8220;value&#8221;: &#8220;HHC Port Mapping&#8221;</p>
-</div></blockquote>
-<p>},
-&#8220;NewLeaseDuration&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;argument&#8221;: {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewLeaseDuration&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingLeaseDuration&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;UI4&#8221;</div></blockquote>
-<p>},
-&#8220;value&#8221;: {</p>
-<blockquote>
-<div>&#8220;value&#8221;: 0</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
 <p>}</p>
 </div>
 <div class="section" id="upnp-event">

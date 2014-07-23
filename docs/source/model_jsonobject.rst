@@ -227,8 +227,7 @@ Upnp 디바이스에 제어 메시지를 보냈을 때(Action)에 대한 응답 
 
 Example::
 
-
-{
+  {
     "NewRemoteHost": {
         "argument": {
             "aliases": [],
@@ -348,7 +347,6 @@ Upnp Event
 Upnp 디바이스에서 상태가 변경된 정보를 담고있습니다.
 
 Example::
-
 
 {
   "event": [
