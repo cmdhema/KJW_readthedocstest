@@ -23,4 +23,4 @@ Contents:
 Indices and tables
 ==================
 
-test index3
+test index4
