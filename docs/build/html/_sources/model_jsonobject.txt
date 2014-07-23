@@ -155,7 +155,6 @@ Example::
                 "returnValue": false
             }]
         },
-        ...
     },
     "serviceId": {
         "id": "WANIPConn1",
