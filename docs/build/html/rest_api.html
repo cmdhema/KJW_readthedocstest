@@ -1170,6 +1170,37 @@
 <div class="section" id="control">
 <h2>Control<a class="headerlink" href="#control" title="Permalink to this headline">¶</a></h2>
 <p>개요</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="3%" />
+<col width="22%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Url</td>
+<td>/api/{gatewayID}/upnp/{uuid}/{deviceType}*/{serviceType}/{actionName}</td>
+<td>{gatewayID} : 해당 REST 호출에 대한 게이트웨이 ID {uuid} : Upnp 디바이스의 UUID {deviceType} : 내장된 디바이스에 대한 타입, 0개 이상이 될 수 있음 {serviceType} : 제어 요청할 서비스에 대한 서비스 타입 {actionName} : 제어 이름</td>
+</tr>
+<tr class="row-odd"><td>Method</td>
+<td>POST</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Parameter</td>
+<td>Input 타입 인자를 JSON 객체</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Response</td>
+<td>Output 타입 인자에 결과 값</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
 <p>게이트웨이에서 연결된 디바이스중  UUID에 해당하는 디바이스 디스크립터를 가져옵니다.</p>
 <p>예시</p>
 <p>Requset:</p>
