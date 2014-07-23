@@ -52,113 +52,92 @@
 <p>Upnp 서비스가 제공하는 XML형식의 Descriptor와 매칭이 되는 자바스크립트 객체입니다.
 하나의 디바이스 디스크립터는 embeddedDevices 배열 안에서 여러개의 서브 디바이스 디스크립터를 가질 수 있습니다.
 하나의 디바이스 디스크립터는 services 배열 안에서 여러개의 서비스 디스크립터를 가질 수 있습니다.</p>
-<p>## Example</p>
-<p>~~~~javascript</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>{</dt>
-<dd><dl class="first docutils">
-<dt>&#8220;details&#8221;: {</dt>
-<dd><p class="first">&#8220;baseURL&#8221;: null,
-&#8220;dlnaCaps&#8221;: null,
-&#8220;dlnaDocs&#8221;: [</p>
-<p>],
-&#8220;friendlyName&#8221;: &#8220;EFM Networks ipTIME N8004R&#8221;,
-&#8220;manufacturerDetails&#8221;: {</p>
-<blockquote>
-<div>&#8220;manufacturer&#8221;: &#8220;EFM Networks&#8221;,
-&#8220;manufacturerURI&#8221;: &#8220;<a class="reference external" href="http://www.iptime.co.kr">http://www.iptime.co.kr</a>&#8220;</div></blockquote>
-<p>},
-&#8220;modelDetails&#8221;: {</p>
-<blockquote>
-<div>&#8220;modelDescription&#8221;: &#8220;EFM Networks ipTIME N8004R&#8221;,
-&#8220;modelName&#8221;: &#8220;ipTIME N8004R&#8221;,
-&#8220;modelNumber&#8221;: &#8220;1&#8221;,
-&#8220;modelURI&#8221;: &#8220;<a class="reference external" href="http://www.iptime.co.kr">http://www.iptime.co.kr</a>&#8220;</div></blockquote>
-<p class="last">},
-&#8220;presentationURI&#8221;: &#8220;<a class="reference external" href="http://192.168.0.1/">http://192.168.0.1/</a>&#8221;,
-&#8220;secProductCaps&#8221;: null,
-&#8220;serialNumber&#8221;: &#8220;12345678&#8221;,
-&#8220;upc&#8221;: null</p>
-</dd>
-</dl>
-<p>},
-&#8220;embeddedDevices&#8221;: [</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>{</dt>
-<dd>...</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>],
-&#8220;icons&#8221;: [</p>
-<p>],
-&#8220;identity&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;descriptorURL&#8221;: &#8220;<a class="reference external" href="http://192.168.0.1:56450/etc/linuxigd/gatedesc.xml">http://192.168.0.1:56450/etc/linuxigd/gatedesc.xml</a>&#8221;,
-&#8220;discoveredOnLocalAddress&#8221;: &#8220;192.168.0.100&#8221;,
-&#8220;interfaceMacAddress&#8221;: null,
-&#8220;maxAgeSeconds&#8221;: 120,
-&#8220;udn&#8221;: {</p>
-<blockquote>
-<div>&#8220;identifierString&#8221;: &#8220;fc4ec57e-b051-11db-88f8-0060085db3f6&#8221;</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-&#8220;services&#8221;: [</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>{</dt>
-<dd><p class="first">&#8220;controlURI&#8221;: &#8220;/dummy&#8221;,
-&#8220;descriptorURI&#8221;: &#8220;/etc/linuxigd/dummy.xml&#8221;,
-&#8220;eventSubscriptionURI&#8221;: &#8220;/dummy&#8221;,
-&#8220;actions&#8221;: {</p>
-<p>},
-&#8220;serviceId&#8221;: {</p>
-<blockquote>
-<div>&#8220;id&#8221;: &#8220;dummy1&#8221;,
-&#8220;namespace&#8221;: &#8220;dummy-com&#8221;</div></blockquote>
-<p>},
-&#8220;serviceType&#8221;: {</p>
-<blockquote>
-<div>&#8220;namespace&#8221;: &#8220;schemas-dummy-com&#8221;,
-&#8220;type&#8221;: &#8220;Dummy&#8221;,
-&#8220;version&#8221;: 1</div></blockquote>
-<p>},
-&#8220;stateVariables&#8221;: {</p>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>],
-&#8220;type&#8221;: {</p>
-<blockquote>
-<div>&#8220;namespace&#8221;: &#8220;schemas-upnp-org&#8221;,
-&#8220;type&#8221;: &#8220;InternetGatewayDevice&#8221;,
-&#8220;version&#8221;: 1</div></blockquote>
-<p>},
-&#8220;version&#8221;: {</p>
-<blockquote>
-<div>&#8220;major&#8221;: 1,
-&#8220;minor&#8221;: 0</div></blockquote>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;details&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;baseURL&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;dlnaCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;dlnaDocs&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+    <span class="p">],</span>
+    <span class="s">&quot;friendlyName&quot;</span><span class="p">:</span> <span class="s">&quot;EFM Networks ipTIME N8004R&quot;</span><span class="p">,</span>
+    <span class="s">&quot;manufacturerDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;manufacturer&quot;</span><span class="p">:</span> <span class="s">&quot;EFM Networks&quot;</span><span class="p">,</span>
+      <span class="s">&quot;manufacturerURI&quot;</span><span class="p">:</span> <span class="s">&quot;http:\/\/www.iptime.co.kr&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;modelDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;modelDescription&quot;</span><span class="p">:</span> <span class="s">&quot;EFM Networks ipTIME N8004R&quot;</span><span class="p">,</span>
+      <span class="s">&quot;modelName&quot;</span><span class="p">:</span> <span class="s">&quot;ipTIME N8004R&quot;</span><span class="p">,</span>
+      <span class="s">&quot;modelNumber&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s">&quot;modelURI&quot;</span><span class="p">:</span> <span class="s">&quot;http:\/\/www.iptime.co.kr&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;presentationURI&quot;</span><span class="p">:</span> <span class="s">&quot;http:\/\/192.168.0.1\/&quot;</span><span class="p">,</span>
+    <span class="s">&quot;secProductCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;serialNumber&quot;</span><span class="p">:</span> <span class="s">&quot;12345678&quot;</span><span class="p">,</span>
+    <span class="s">&quot;upc&quot;</span><span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span>
+  <span class="s">&quot;embeddedDevices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="o">...</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s">&quot;icons&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+  <span class="p">],</span>
+  <span class="s">&quot;identity&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;descriptorURL&quot;</span><span class="p">:</span> <span class="s">&quot;http:\/\/192.168.0.1:56450\/etc\/linuxigd\/gatedesc.xml&quot;</span><span class="p">,</span>
+    <span class="s">&quot;discoveredOnLocalAddress&quot;</span><span class="p">:</span> <span class="s">&quot;192.168.0.100&quot;</span><span class="p">,</span>
+    <span class="s">&quot;interfaceMacAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;maxAgeSeconds&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s">&quot;udn&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;identifierString&quot;</span><span class="p">:</span> <span class="s">&quot;fc4ec57e-b051-11db-88f8-0060085db3f6&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s">&quot;services&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s">&quot;controlURI&quot;</span><span class="p">:</span> <span class="s">&quot;\/dummy&quot;</span><span class="p">,</span>
+      <span class="s">&quot;descriptorURI&quot;</span><span class="p">:</span> <span class="s">&quot;\/etc\/linuxigd\/dummy.xml&quot;</span><span class="p">,</span>
+      <span class="s">&quot;eventSubscriptionURI&quot;</span><span class="p">:</span> <span class="s">&quot;\/dummy&quot;</span><span class="p">,</span>
+      <span class="s">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+      <span class="p">},</span>
+      <span class="s">&quot;serviceId&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;dummy1&quot;</span><span class="p">,</span>
+        <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;dummy-com&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;serviceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-dummy-com&quot;</span><span class="p">,</span>
+        <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;Dummy&quot;</span><span class="p">,</span>
+        <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+      <span class="s">&quot;stateVariables&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-upnp-org&quot;</span><span class="p">,</span>
+    <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;InternetGatewayDevice&quot;</span><span class="p">,</span>
+    <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;major&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<hr class="docutils" />
+</div>
 <div class="section" id="upnp-service-descriptor">
-<h2>### Upnp Service Descriptor<a class="headerlink" href="#upnp-service-descriptor" title="Permalink to this headline">¶</a></h2>
+<h2>Upnp Service Descriptor<a class="headerlink" href="#upnp-service-descriptor" title="Permalink to this headline">¶</a></h2>
 <p>서비스 디스크립터는 하나의 디바이스 디스크립터 안에 여러개 존재할 수 있습니다.
 actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 수 있습니다.</p>
-<p>##### Example</p>
-<p>~~~~javascript</p>
-<dl class="docutils">
-<dt>{</dt>
-<dd><p class="first">&#8220;controlURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.ctl&#8221;,
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+</pre></div>
+</div>
+<blockquote>
+<div><p>&#8220;controlURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.ctl&#8221;,
 &#8220;descriptorURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.xml&#8221;,
 &#8220;eventSubscriptionURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.evt&#8221;,
 &#8220;actions&#8221;: {</p>
@@ -320,20 +299,19 @@ actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 �
 <p>}</p>
 </div></blockquote>
 </div></blockquote>
-<p class="last">}</p>
-</dd>
-</dl>
+<p>}</p>
+</div></blockquote>
 <p>}</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="upnp-action-response">
-<h2>### Upnp Action Response<a class="headerlink" href="#upnp-action-response" title="Permalink to this headline">¶</a></h2>
+<h2>Upnp Action Response<a class="headerlink" href="#upnp-action-response" title="Permalink to this headline">¶</a></h2>
 <p>Upnp 디바이스에 제어 메시지를 보냈을 때(Action)에 대한 응답 객체입니다.</p>
-<p>##### Example</p>
-<p>~~~~javascript</p>
-<dl class="docutils">
-<dt>{</dt>
-<dd><dl class="first docutils">
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="docutils">
 <dt>&#8220;NewRemoteHost&#8221;: {</dt>
 <dd><dl class="first docutils">
 <dt>&#8220;argument&#8221;: {</dt>
@@ -486,18 +464,17 @@ actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 �
 <div>&#8220;value&#8221;: 0</div></blockquote>
 <p>}</p>
 </div></blockquote>
-<p class="last">}</p>
-</dd>
-</dl>
+<p>}</p>
+</div></blockquote>
 <p>}</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="upnp-event">
-<h2>### Upnp Event<a class="headerlink" href="#upnp-event" title="Permalink to this headline">¶</a></h2>
+<h2>Upnp Event<a class="headerlink" href="#upnp-event" title="Permalink to this headline">¶</a></h2>
 <p>Upnp 디바이스에서 상태가 변경된 정보를 담고있습니다.</p>
-<p>##### Example</p>
-<p>~~~~javascript
-{</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+</pre></div>
+</div>
 <blockquote>
 <div><dl class="docutils">
 <dt>&#8220;event&#8221;: [</dt>
@@ -677,9 +654,7 @@ actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 �
 <p>],
 &#8220;time&#8221;: 1390462617423</p>
 </div></blockquote>
-<div class="section" id="id2">
-<h3>}<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-</div>
+<p>}</p>
 </div>
 </div>
 
@@ -693,12 +668,9 @@ actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 �
   <ul>
 <li><a class="reference internal" href="#">Upnp Device Descriptor</a><ul>
 <li><a class="reference internal" href="#id1">개요</a></li>
-<li><a class="reference internal" href="#upnp-service-descriptor">### Upnp Service Descriptor</a></li>
-<li><a class="reference internal" href="#upnp-action-response">### Upnp Action Response</a></li>
-<li><a class="reference internal" href="#upnp-event">### Upnp Event</a><ul>
-<li><a class="reference internal" href="#id2">}</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#upnp-service-descriptor">Upnp Service Descriptor</a></li>
+<li><a class="reference internal" href="#upnp-action-response">Upnp Action Response</a></li>
+<li><a class="reference internal" href="#upnp-event">Upnp Event</a></li>
 </ul>
 </li>
 </ul>

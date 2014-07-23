@@ -7,9 +7,7 @@ Upnp 서비스가 제공하는 XML형식의 Descriptor와 매칭이 되는 자�
 하나의 디바이스 디스크립터는 embeddedDevices 배열 안에서 여러개의 서브 디바이스 디스크립터를 가질 수 있습니다.
 하나의 디바이스 디스크립터는 services 배열 안에서 여러개의 서비스 디스크립터를 가질 수 있습니다.
 
-## Example
-
-~~~~javascript
+Example::
 
   {
     "details": {
@@ -84,17 +82,13 @@ Upnp 서비스가 제공하는 XML형식의 Descriptor와 매칭이 되는 자�
     }
   }
 
-~~~~
-
-### Upnp Service Descriptor
+Upnp Service Descriptor
 -------------------------
 
 서비스 디스크립터는 하나의 디바이스 디스크립터 안에 여러개 존재할 수 있습니다. 
 actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 수 있습니다.
 
-##### Example
-
-~~~~javascript
+Example::
 
 {
     "controlURI": "/etc/linuxigd/gateconnSCPD.ctl",
@@ -225,16 +219,14 @@ actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 �
     }
 }
 
-~~~~
 
-### Upnp Action Response
+Upnp Action Response
 -------------------------
   
 Upnp 디바이스에 제어 메시지를 보냈을 때(Action)에 대한 응답 객체입니다.
 
-##### Example
+Example::
 
-~~~~javascript
 
 {
     "NewRemoteHost": {
@@ -349,16 +341,15 @@ Upnp 디바이스에 제어 메시지를 보냈을 때(Action)에 대한 응답 
     }
 }
 
-~~~~
 
-### Upnp Event
+Upnp Event
 -------------------------
   
 Upnp 디바이스에서 상태가 변경된 정보를 담고있습니다.
 
-##### Example
+Example::
 
-~~~~javascript
+
 {
   "event": [
     {
@@ -483,4 +474,3 @@ Upnp 디바이스에서 상태가 변경된 정보를 담고있습니다.
   ],
   "time": 1390462617423
 }
-~~~~
