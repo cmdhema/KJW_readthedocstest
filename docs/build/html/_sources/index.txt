@@ -14,7 +14,7 @@ Contents:
 .. _mydocs:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    
 
    test3
