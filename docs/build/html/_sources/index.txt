@@ -18,9 +18,9 @@ Contents:
    
    test1
    test2
-
+   test3
 
 Indices and tables
 ==================
 
-test index4
+test index5
