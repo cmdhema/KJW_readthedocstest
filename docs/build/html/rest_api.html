@@ -1,0 +1,1195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rest API &mdash; test 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="test 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Upnp Device Descriptor" href="model_jsonobject.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="model_jsonobject.html" title="Upnp Device Descriptor"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">test 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="rest-api">
+<h1>Rest API<a class="headerlink" href="#rest-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getalldevicedescriptor">
+<h2>getAllDeviceDescriptor<a class="headerlink" href="#getalldevicedescriptor" title="Permalink to this headline">¶</a></h2>
+<p>개요</p>
+<p>게이트웨이에서 연결된 모든 디바이스 디스크립터를 가져옵니다.</p>
+<p>## 예시</p>
+<p>### Requset</p>
+<p>GET /SHS/api/8/getAllDeviceDescriptor HTTP/1.1</p>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[{</span>
+   <span class="s">&quot;details&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s">&quot;baseURL&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+       <span class="s">&quot;dlnaCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+       <span class="s">&quot;dlnaDocs&quot;</span><span class="p">:</span> <span class="p">[],</span>
+       <span class="s">&quot;friendlyName&quot;</span><span class="p">:</span> <span class="s">&quot;EFM Networks ipTIME N104M&quot;</span><span class="p">,</span>
+       <span class="s">&quot;manufacturerDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;manufacturer&quot;</span><span class="p">:</span> <span class="s">&quot;EFM Networks&quot;</span><span class="p">,</span>
+           <span class="s">&quot;manufacturerURI&quot;</span><span class="p">:</span> <span class="s">&quot;http://www.iptime.co.kr&quot;</span>
+       <span class="p">},</span>
+       <span class="s">&quot;modelDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;modelDescription&quot;</span><span class="p">:</span> <span class="s">&quot;EFM Networks ipTIME N104M&quot;</span><span class="p">,</span>
+           <span class="s">&quot;modelName&quot;</span><span class="p">:</span> <span class="s">&quot;ipTIME N104M&quot;</span><span class="p">,</span>
+           <span class="s">&quot;modelNumber&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+           <span class="s">&quot;modelURI&quot;</span><span class="p">:</span> <span class="s">&quot;http://www.iptime.co.kr&quot;</span>
+       <span class="p">},</span>
+       <span class="s">&quot;presentationURI&quot;</span><span class="p">:</span> <span class="s">&quot;http://192.168.0.1/&quot;</span><span class="p">,</span>
+       <span class="s">&quot;secProductCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+       <span class="s">&quot;serialNumber&quot;</span><span class="p">:</span> <span class="s">&quot;12345678&quot;</span><span class="p">,</span>
+       <span class="s">&quot;upc&quot;</span><span class="p">:</span> <span class="n">null</span>
+   <span class="p">},</span>
+   <span class="s">&quot;embeddedDevices&quot;</span><span class="p">:</span> <span class="p">[{</span>
+       <span class="s">&quot;details&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;baseURL&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s">&quot;dlnaCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s">&quot;dlnaDocs&quot;</span><span class="p">:</span> <span class="p">[],</span>
+           <span class="s">&quot;friendlyName&quot;</span><span class="p">:</span> <span class="s">&quot;WANDevice&quot;</span><span class="p">,</span>
+           <span class="s">&quot;manufacturerDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;manufacturer&quot;</span><span class="p">:</span> <span class="s">&quot;UPnP&quot;</span><span class="p">,</span>
+               <span class="s">&quot;manufacturerURI&quot;</span><span class="p">:</span> <span class="s">&quot;http://www.iptime.co.kr&quot;</span>
+           <span class="p">},</span>
+           <span class="s">&quot;modelDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;modelDescription&quot;</span><span class="p">:</span> <span class="s">&quot;WAN Device&quot;</span><span class="p">,</span>
+               <span class="s">&quot;modelName&quot;</span><span class="p">:</span> <span class="s">&quot;WAN Device&quot;</span><span class="p">,</span>
+               <span class="s">&quot;modelNumber&quot;</span><span class="p">:</span> <span class="s">&quot;20090617&quot;</span><span class="p">,</span>
+               <span class="s">&quot;modelURI&quot;</span><span class="p">:</span> <span class="s">&quot;http://www.iptime.co.kr&quot;</span>
+           <span class="p">},</span>
+           <span class="s">&quot;presentationURI&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s">&quot;secProductCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s">&quot;serialNumber&quot;</span><span class="p">:</span> <span class="s">&quot;12345678&quot;</span><span class="p">,</span>
+           <span class="s">&quot;upc&quot;</span><span class="p">:</span> <span class="s">&quot;UPNPD&quot;</span>
+       <span class="p">},</span>
+       <span class="s">&quot;embeddedDevices&quot;</span><span class="p">:</span> <span class="p">[{</span>
+           <span class="s">&quot;details&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;baseURL&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+               <span class="s">&quot;dlnaCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+               <span class="s">&quot;dlnaDocs&quot;</span><span class="p">:</span> <span class="p">[],</span>
+               <span class="s">&quot;friendlyName&quot;</span><span class="p">:</span> <span class="s">&quot;WANConnectionDevice&quot;</span><span class="p">,</span>
+               <span class="s">&quot;manufacturerDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;manufacturer&quot;</span><span class="p">:</span> <span class="s">&quot;UPnP&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;manufacturerURI&quot;</span><span class="p">:</span> <span class="s">&quot;http://www.iptime.co.kr&quot;</span>
+               <span class="p">},</span>
+               <span class="s">&quot;modelDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;modelDescription&quot;</span><span class="p">:</span> <span class="s">&quot;UPnP daemon&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;modelName&quot;</span><span class="p">:</span> <span class="s">&quot;UPnPd&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;modelNumber&quot;</span><span class="p">:</span> <span class="s">&quot;20090617&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;modelURI&quot;</span><span class="p">:</span> <span class="s">&quot;http://www.iptime.co.kr&quot;</span>
+               <span class="p">},</span>
+               <span class="s">&quot;presentationURI&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+               <span class="s">&quot;secProductCaps&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+               <span class="s">&quot;serialNumber&quot;</span><span class="p">:</span> <span class="s">&quot;12345678&quot;</span><span class="p">,</span>
+               <span class="s">&quot;upc&quot;</span><span class="p">:</span> <span class="s">&quot;UPNPD&quot;</span>
+           <span class="p">},</span>
+           <span class="s">&quot;embeddedDevices&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s">&quot;icons&quot;</span><span class="p">:</span> <span class="p">[],</span>
+           <span class="s">&quot;identity&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;descriptorURL&quot;</span><span class="p">:</span> <span class="s">&quot;http://192.168.0.1:3243/etc/linuxigd/gatedesc.xml&quot;</span><span class="p">,</span>
+               <span class="s">&quot;discoveredOnLocalAddress&quot;</span><span class="p">:</span> <span class="s">&quot;192.168.0.9&quot;</span><span class="p">,</span>
+               <span class="s">&quot;interfaceMacAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+               <span class="s">&quot;maxAgeSeconds&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+               <span class="s">&quot;udn&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;identifierString&quot;</span><span class="p">:</span> <span class="s">&quot;fc4ec57e-b051-11db-88f8-0060085db3f6&quot;</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="s">&quot;services&quot;</span><span class="p">:</span> <span class="p">[{</span>
+               <span class="s">&quot;controlURI&quot;</span><span class="p">:</span> <span class="s">&quot;/etc/linuxigd/gateconnSCPD.ctl&quot;</span><span class="p">,</span>
+               <span class="s">&quot;descriptorURI&quot;</span><span class="p">:</span> <span class="s">&quot;/etc/linuxigd/gateconnSCPD.xml&quot;</span><span class="p">,</span>
+               <span class="s">&quot;eventSubscriptionURI&quot;</span><span class="p">:</span> <span class="s">&quot;/etc/linuxigd/gateconnSCPD.evt&quot;</span><span class="p">,</span>
+               <span class="s">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;GetStatusInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewConnectionStatus&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionStatus&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLastConnectionError&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;LastConnectionError&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewUptime&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;Uptime&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GetStatusInfo&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewConnectionStatus&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionStatus&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLastConnectionError&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;LastConnectionError&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewUptime&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;Uptime&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;GetExternalIPAddress&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalIPAddress&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalIPAddress&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GetExternalIPAddress&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalIPAddress&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalIPAddress&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;RequestConnection&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;RequestConnection&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;AddPortMapping&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;AddPortMapping&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;SetConnectionType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;SetConnectionType&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;GetSpecificPortMappingEntry&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GetSpecificPortMappingEntry&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;DeletePortMapping&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;DeletePortMapping&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;GetGenericPortMappingEntry&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingIndex&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingNumberOfEntries&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingIndex&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingNumberOfEntries&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GetGenericPortMappingEntry&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;GetNATRSIPStatus&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRSIPAvailable&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RSIPAvailable&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewNATEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;NATEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GetNATRSIPStatus&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRSIPAvailable&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RSIPAvailable&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewNATEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;NATEnabled&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;ForceTermination&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;ForceTermination&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;GetConnectionTypeInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPossibleConnectionTypes&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PossibleConnectionTypes&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}],</span>
+                       <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GetConnectionTypeInfo&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionType&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span> <span class="p">{</span>
+                           <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                           <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPossibleConnectionTypes&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PossibleConnectionTypes&quot;</span><span class="p">,</span>
+                           <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">}]</span>
+                   <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="s">&quot;serviceId&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;WANIPConn1&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;upnp-org&quot;</span>
+               <span class="p">},</span>
+               <span class="s">&quot;serviceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-upnp-org&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;WANIPConnection&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+               <span class="p">},</span>
+               <span class="s">&quot;stateVariables&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;TCP&quot;</span><span class="p">,</span> <span class="s">&quot;UDP&quot;</span><span class="p">],</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;Uptime&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Uptime&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI4&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;RSIPAvailable&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;RSIPAvailable&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;BOOLEAN&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;BOOLEAN&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;ConnectionType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionType&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;InternalClient&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI4&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;PortMappingNumberOfEntries&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingNumberOfEntries&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI2&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;LastConnectionError&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;LastConnectionError&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;ERROR_NONE&quot;</span><span class="p">],</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;ExternalPort&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI2&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;InternalPort&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI2&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;PossibleConnectionTypes&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;PossibleConnectionTypes&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;Unconfigured&quot;</span><span class="p">,</span> <span class="s">&quot;IP_Routed&quot;</span><span class="p">,</span> <span class="s">&quot;IP_Bridged&quot;</span><span class="p">],</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;RemoteHost&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;ConnectionStatus&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;ConnectionStatus&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;Unconfigured&quot;</span><span class="p">,</span> <span class="s">&quot;Connecting&quot;</span><span class="p">,</span> <span class="s">&quot;Connected&quot;</span><span class="p">,</span> <span class="s">&quot;PendingDisconnect&quot;</span><span class="p">,</span> <span class="s">&quot;Disconnecting&quot;</span><span class="p">,</span> <span class="s">&quot;Disconnected&quot;</span><span class="p">],</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;ExternalIPAddress&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalIPAddress&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;NATEnabled&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                           <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NATEnabled&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                           <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                               <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;BOOLEAN&quot;</span>
+                           <span class="p">},</span>
+                           <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                       <span class="p">}</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">}],</span>
+           <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-upnp-org&quot;</span><span class="p">,</span>
+               <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;WANConnectionDevice&quot;</span><span class="p">,</span>
+               <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+           <span class="p">},</span>
+           <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;major&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+               <span class="s">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">0</span>
+           <span class="p">}</span>
+       <span class="p">}],</span>
+       <span class="s">&quot;icons&quot;</span><span class="p">:</span> <span class="p">[],</span>
+       <span class="s">&quot;identity&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;descriptorURL&quot;</span><span class="p">:</span> <span class="s">&quot;http://192.168.0.1:3243/etc/linuxigd/gatedesc.xml&quot;</span><span class="p">,</span>
+           <span class="s">&quot;discoveredOnLocalAddress&quot;</span><span class="p">:</span> <span class="s">&quot;192.168.0.9&quot;</span><span class="p">,</span>
+           <span class="s">&quot;interfaceMacAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+           <span class="s">&quot;maxAgeSeconds&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+           <span class="s">&quot;udn&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;identifierString&quot;</span><span class="p">:</span> <span class="s">&quot;fc4ec57e-b051-11db-88f8-0060085db3f6&quot;</span>
+           <span class="p">}</span>
+       <span class="p">},</span>
+       <span class="s">&quot;services&quot;</span><span class="p">:</span> <span class="p">[{</span>
+           <span class="s">&quot;controlURI&quot;</span><span class="p">:</span> <span class="s">&quot;/etc/linuxigd/gateicfgSCPD.ctl&quot;</span><span class="p">,</span>
+           <span class="s">&quot;descriptorURI&quot;</span><span class="p">:</span> <span class="s">&quot;/etc/linuxigd/gateicfgSCPD.xml&quot;</span><span class="p">,</span>
+           <span class="s">&quot;eventSubscriptionURI&quot;</span><span class="p">:</span> <span class="s">&quot;/etc/linuxigd/gateicfgSCPD.evt&quot;</span><span class="p">,</span>
+           <span class="s">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;GetCommonLinkProperties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewWANAccessType&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;WANAccessType&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span> <span class="p">{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLayer1UpstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;Layer1UpstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span> <span class="p">{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLayer1DownstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;Layer1DownstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span> <span class="p">{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPhysicalLinkStatus&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PhysicalLinkStatus&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">}],</span>
+                   <span class="s">&quot;inputArguments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                   <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GetCommonLinkProperties&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;outputArguments&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewWANAccessType&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;WANAccessType&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span> <span class="p">{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLayer1UpstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;Layer1UpstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span> <span class="p">{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLayer1DownstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;Layer1DownstreamMaxBitRate&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span> <span class="p">{</span>
+                       <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                       <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPhysicalLinkStatus&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PhysicalLinkStatus&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">}]</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="s">&quot;serviceId&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;WANCommonIFC1&quot;</span><span class="p">,</span>
+               <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;upnp-org&quot;</span>
+           <span class="p">},</span>
+           <span class="s">&quot;serviceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-upnp-org&quot;</span><span class="p">,</span>
+               <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;WANCommonInterfaceConfig&quot;</span><span class="p">,</span>
+               <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+           <span class="p">},</span>
+           <span class="s">&quot;stateVariables&quot;</span><span class="p">:</span> <span class="p">{</span>
+               <span class="s">&quot;Layer1UpstreamMaxBitRate&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Layer1UpstreamMaxBitRate&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                       <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                       <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI4&quot;</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                   <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="s">&quot;Layer1DownstreamMaxBitRate&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Layer1DownstreamMaxBitRate&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                       <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                       <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI4&quot;</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                   <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="s">&quot;WANAccessType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;WANAccessType&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                       <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;DSL&quot;</span><span class="p">,</span> <span class="s">&quot;POTS&quot;</span><span class="p">,</span> <span class="s">&quot;Cable&quot;</span><span class="p">,</span> <span class="s">&quot;Ethernet&quot;</span><span class="p">],</span>
+                       <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                   <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="s">&quot;PhysicalLinkStatus&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                       <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">false</span>
+                   <span class="p">},</span>
+                   <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;PhysicalLinkStatus&quot;</span><span class="p">,</span>
+                   <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                       <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;Up&quot;</span><span class="p">,</span> <span class="s">&quot;Down&quot;</span><span class="p">,</span> <span class="s">&quot;Initializing&quot;</span><span class="p">,</span> <span class="s">&quot;Unavailable&quot;</span><span class="p">],</span>
+                       <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                           <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+                       <span class="p">},</span>
+                       <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+       <span class="p">}],</span>
+       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-upnp-org&quot;</span><span class="p">,</span>
+           <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;WANDevice&quot;</span><span class="p">,</span>
+           <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+       <span class="p">},</span>
+       <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;major&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+           <span class="s">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">0</span>
+       <span class="p">}</span>
+   <span class="p">}],</span>
+   <span class="s">&quot;icons&quot;</span><span class="p">:</span> <span class="p">[],</span>
+   <span class="s">&quot;identity&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s">&quot;descriptorURL&quot;</span><span class="p">:</span> <span class="s">&quot;http://192.168.0.1:3243/etc/linuxigd/gatedesc.xml&quot;</span><span class="p">,</span>
+       <span class="s">&quot;discoveredOnLocalAddress&quot;</span><span class="p">:</span> <span class="s">&quot;192.168.0.9&quot;</span><span class="p">,</span>
+       <span class="s">&quot;interfaceMacAddress&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+       <span class="s">&quot;maxAgeSeconds&quot;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+       <span class="s">&quot;udn&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;identifierString&quot;</span><span class="p">:</span> <span class="s">&quot;fc4ec57e-b051-11db-88f8-0060085db3f6&quot;</span>
+       <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="s">&quot;services&quot;</span><span class="p">:</span> <span class="p">[{</span>
+       <span class="s">&quot;controlURI&quot;</span><span class="p">:</span> <span class="s">&quot;/dummy&quot;</span><span class="p">,</span>
+       <span class="s">&quot;descriptorURI&quot;</span><span class="p">:</span> <span class="s">&quot;/etc/linuxigd/dummy.xml&quot;</span><span class="p">,</span>
+       <span class="s">&quot;eventSubscriptionURI&quot;</span><span class="p">:</span> <span class="s">&quot;/dummy&quot;</span><span class="p">,</span>
+       <span class="s">&quot;actions&quot;</span><span class="p">:</span> <span class="p">{},</span>
+       <span class="s">&quot;serviceId&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;dummy1&quot;</span><span class="p">,</span>
+           <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;dummy-com&quot;</span>
+       <span class="p">},</span>
+       <span class="s">&quot;serviceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-dummy-com&quot;</span><span class="p">,</span>
+           <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;Dummy&quot;</span><span class="p">,</span>
+           <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+       <span class="p">},</span>
+       <span class="s">&quot;stateVariables&quot;</span><span class="p">:</span> <span class="p">{}</span>
+   <span class="p">}],</span>
+   <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-upnp-org&quot;</span><span class="p">,</span>
+       <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;InternetGatewayDevice&quot;</span><span class="p">,</span>
+       <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+   <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s">&quot;major&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="s">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">0</span>
+   <span class="p">}</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Rest API</a><ul>
+<li><a class="reference internal" href="#getalldevicedescriptor">getAllDeviceDescriptor</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="model_jsonobject.html"
+                        title="previous chapter">Upnp Device Descriptor</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/rest_api.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="model_jsonobject.html" title="Upnp Device Descriptor"
+             >previous</a> |</li>
+        <li><a href="index.html">test 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, kjw.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
