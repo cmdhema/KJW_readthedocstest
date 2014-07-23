@@ -18,6 +18,7 @@ Contents:
    
 
    test3
+   test2
 
 Indices and tables
 ==================
