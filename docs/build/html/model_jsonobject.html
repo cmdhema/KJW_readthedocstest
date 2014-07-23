@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduce &mdash; test 0.1 documentation</title>
+    <title>Upnp Device Descriptor &mdash; test 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="test 0.1 documentation" href="index.html" /> 
+    <link rel="top" title="test 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Introduce" href="introduce.html" /> 
   </head>
   <body>
     <div class="related">
@@ -32,6 +33,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="introduce.html" title="Introduce"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">test 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -41,19 +45,641 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="introduce">
-<h1>Introduce<a class="headerlink" href="#introduce" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="upnp-device-descriptor">
+<h1>Upnp Device Descriptor<a class="headerlink" href="#upnp-device-descriptor" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>Introduce<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>HHC(Hybrid Home Cloud) 서비스에서 HHCS(Hybrid Home Cloud Server)가 제공하는 API을 설명합니다.</p>
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Upnp 서비스가 제공하는 XML형식의 Descriptor와 매칭이 되는 자바스크립트 객체입니다.
+하나의 디바이스 디스크립터는 embeddedDevices 배열 안에서 여러개의 서브 디바이스 디스크립터를 가질 수 있습니다.
+하나의 디바이스 디스크립터는 services 배열 안에서 여러개의 서비스 디스크립터를 가질 수 있습니다.</p>
+<p>## Example</p>
+<p>~~~~javascript</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><dl class="first docutils">
+<dt>&#8220;details&#8221;: {</dt>
+<dd><p class="first">&#8220;baseURL&#8221;: null,
+&#8220;dlnaCaps&#8221;: null,
+&#8220;dlnaDocs&#8221;: [</p>
+<p>],
+&#8220;friendlyName&#8221;: &#8220;EFM Networks ipTIME N8004R&#8221;,
+&#8220;manufacturerDetails&#8221;: {</p>
+<blockquote>
+<div>&#8220;manufacturer&#8221;: &#8220;EFM Networks&#8221;,
+&#8220;manufacturerURI&#8221;: &#8220;<a class="reference external" href="http://www.iptime.co.kr">http://www.iptime.co.kr</a>&#8220;</div></blockquote>
+<p>},
+&#8220;modelDetails&#8221;: {</p>
+<blockquote>
+<div>&#8220;modelDescription&#8221;: &#8220;EFM Networks ipTIME N8004R&#8221;,
+&#8220;modelName&#8221;: &#8220;ipTIME N8004R&#8221;,
+&#8220;modelNumber&#8221;: &#8220;1&#8221;,
+&#8220;modelURI&#8221;: &#8220;<a class="reference external" href="http://www.iptime.co.kr">http://www.iptime.co.kr</a>&#8220;</div></blockquote>
+<p class="last">},
+&#8220;presentationURI&#8221;: &#8220;<a class="reference external" href="http://192.168.0.1/">http://192.168.0.1/</a>&#8221;,
+&#8220;secProductCaps&#8221;: null,
+&#8220;serialNumber&#8221;: &#8220;12345678&#8221;,
+&#8220;upc&#8221;: null</p>
+</dd>
+</dl>
+<p>},
+&#8220;embeddedDevices&#8221;: [</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>...</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+&#8220;icons&#8221;: [</p>
+<p>],
+&#8220;identity&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;descriptorURL&#8221;: &#8220;<a class="reference external" href="http://192.168.0.1:56450/etc/linuxigd/gatedesc.xml">http://192.168.0.1:56450/etc/linuxigd/gatedesc.xml</a>&#8221;,
+&#8220;discoveredOnLocalAddress&#8221;: &#8220;192.168.0.100&#8221;,
+&#8220;interfaceMacAddress&#8221;: null,
+&#8220;maxAgeSeconds&#8221;: 120,
+&#8220;udn&#8221;: {</p>
+<blockquote>
+<div>&#8220;identifierString&#8221;: &#8220;fc4ec57e-b051-11db-88f8-0060085db3f6&#8221;</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+&#8220;services&#8221;: [</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd><p class="first">&#8220;controlURI&#8221;: &#8220;/dummy&#8221;,
+&#8220;descriptorURI&#8221;: &#8220;/etc/linuxigd/dummy.xml&#8221;,
+&#8220;eventSubscriptionURI&#8221;: &#8220;/dummy&#8221;,
+&#8220;actions&#8221;: {</p>
+<p>},
+&#8220;serviceId&#8221;: {</p>
+<blockquote>
+<div>&#8220;id&#8221;: &#8220;dummy1&#8221;,
+&#8220;namespace&#8221;: &#8220;dummy-com&#8221;</div></blockquote>
+<p>},
+&#8220;serviceType&#8221;: {</p>
+<blockquote>
+<div>&#8220;namespace&#8221;: &#8220;schemas-dummy-com&#8221;,
+&#8220;type&#8221;: &#8220;Dummy&#8221;,
+&#8220;version&#8221;: 1</div></blockquote>
+<p>},
+&#8220;stateVariables&#8221;: {</p>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+&#8220;type&#8221;: {</p>
+<blockquote>
+<div>&#8220;namespace&#8221;: &#8220;schemas-upnp-org&#8221;,
+&#8220;type&#8221;: &#8220;InternetGatewayDevice&#8221;,
+&#8220;version&#8221;: 1</div></blockquote>
+<p>},
+&#8220;version&#8221;: {</p>
+<blockquote>
+<div>&#8220;major&#8221;: 1,
+&#8220;minor&#8221;: 0</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
 </div>
-<div class="section" id="model">
-<h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
-<p>Rest API에서 이용되는 모델들에 대해 설명합니다.</p>
+<hr class="docutils" />
+<div class="section" id="upnp-service-descriptor">
+<h2>### Upnp Service Descriptor<a class="headerlink" href="#upnp-service-descriptor" title="Permalink to this headline">¶</a></h2>
+<p>서비스 디스크립터는 하나의 디바이스 디스크립터 안에 여러개 존재할 수 있습니다.
+actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 수 있습니다.</p>
+<p>##### Example</p>
+<p>~~~~javascript</p>
+<dl class="docutils">
+<dt>{</dt>
+<dd><p class="first">&#8220;controlURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.ctl&#8221;,
+&#8220;descriptorURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.xml&#8221;,
+&#8220;eventSubscriptionURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.evt&#8221;,
+&#8220;actions&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;GetStatusInfo&#8221;: {</dt>
+<dd><dl class="first docutils">
+<dt>&#8220;arguments&#8221;: [{</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewConnectionStatus&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;ConnectionStatus&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+<dt>}, {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewLastConnectionError&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;LastConnectionError&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+<dt>}, {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewUptime&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;Uptime&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>}],
+&#8220;inputArguments&#8221;: [],
+&#8220;name&#8221;: &#8220;GetStatusInfo&#8221;,
+&#8220;outputArguments&#8221;: [{</p>
+<blockquote>
+<div>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewConnectionStatus&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;ConnectionStatus&#8221;,
+&#8220;returnValue&#8221;: false</div></blockquote>
+<dl class="docutils">
+<dt>}, {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewLastConnectionError&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;LastConnectionError&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+<dt>}, {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewUptime&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;Uptime&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p class="last">}]</p>
+</dd>
+</dl>
+<p>},
+&#8220;GetExternalIPAddress&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;arguments&#8221;: [{</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewExternalIPAddress&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;ExternalIPAddress&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>}],
+&#8220;inputArguments&#8221;: [],
+&#8220;name&#8221;: &#8220;GetExternalIPAddress&#8221;,
+&#8220;outputArguments&#8221;: [{</p>
+<blockquote>
+<div>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewExternalIPAddress&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;ExternalIPAddress&#8221;,
+&#8220;returnValue&#8221;: false</div></blockquote>
+<p>}]</p>
+</div></blockquote>
+</div></blockquote>
+<p>},
+&#8220;serviceId&#8221;: {</p>
+<blockquote>
+<div>&#8220;id&#8221;: &#8220;WANIPConn1&#8221;,
+&#8220;namespace&#8221;: &#8220;upnp-org&#8221;</div></blockquote>
+<p>},
+&#8220;serviceType&#8221;: {</p>
+<blockquote>
+<div>&#8220;namespace&#8221;: &#8220;schemas-upnp-org&#8221;,
+&#8220;type&#8221;: &#8220;WANIPConnection&#8221;,
+&#8220;version&#8221;: 1</div></blockquote>
+<p>},
+&#8220;stateVariables&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;PortMappingProtocol&#8221;: {</dt>
+<dd><dl class="first docutils">
+<dt>&#8220;eventDetails&#8221;: {</dt>
+<dd>&#8220;eventMaximumRateMilliseconds&#8221;: 0,
+&#8220;eventMinimumDelta&#8221;: 0,
+&#8220;sendEvents&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;name&#8221;: &#8220;PortMappingProtocol&#8221;,
+&#8220;type&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;allowedValueRange&#8221;: null,
+&#8220;allowedValues&#8221;: [&#8220;TCP&#8221;, &#8220;UDP&#8221;],
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
+<p>},
+&#8220;defaultValue&#8221;: null</p>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>},
+&#8220;Uptime&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;eventDetails&#8221;: {</dt>
+<dd>&#8220;eventMaximumRateMilliseconds&#8221;: 0,
+&#8220;eventMinimumDelta&#8221;: 0,
+&#8220;sendEvents&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;name&#8221;: &#8220;Uptime&#8221;,
+&#8220;type&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;allowedValueRange&#8221;: null,
+&#8220;allowedValues&#8221;: null,
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;UI4&#8221;</div></blockquote>
+<p>},
+&#8220;defaultValue&#8221;: null</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+&#8220;RSIPAvailable&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;eventDetails&#8221;: {</dt>
+<dd>&#8220;eventMaximumRateMilliseconds&#8221;: 0,
+&#8220;eventMinimumDelta&#8221;: 0,
+&#8220;sendEvents&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;name&#8221;: &#8220;RSIPAvailable&#8221;,
+&#8220;type&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;allowedValueRange&#8221;: null,
+&#8220;allowedValues&#8221;: null,
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;BOOLEAN&#8221;</div></blockquote>
+<p>},
+&#8220;defaultValue&#8221;: null</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>}</p>
 </div>
-<div class="section" id="rest-api">
-<h2>Rest API<a class="headerlink" href="#rest-api" title="Permalink to this headline">¶</a></h2>
-<p>HHCS가 제공하는 Rest API에 대해 설명합니다.</p>
+<hr class="docutils" />
+<div class="section" id="upnp-action-response">
+<h2>### Upnp Action Response<a class="headerlink" href="#upnp-action-response" title="Permalink to this headline">¶</a></h2>
+<p>Upnp 디바이스에 제어 메시지를 보냈을 때(Action)에 대한 응답 객체입니다.</p>
+<p>##### Example</p>
+<p>~~~~javascript</p>
+<dl class="docutils">
+<dt>{</dt>
+<dd><dl class="first docutils">
+<dt>&#8220;NewRemoteHost&#8221;: {</dt>
+<dd><dl class="first docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewRemoteHost&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;RemoteHost&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
+<p class="last">},
+&#8220;value&#8221;: null</p>
+</dd>
+</dl>
+<p>},
+&#8220;NewExternalPort&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewExternalPort&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;ExternalPort&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;UI2&#8221;</div></blockquote>
+<p>},
+&#8220;value&#8221;: {</p>
+<blockquote>
+<div>&#8220;value&#8221;: 8123</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+&#8220;NewProtocol&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewProtocol&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingProtocol&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
+<p>},
+&#8220;value&#8221;: &#8220;TCP&#8221;</p>
+</div></blockquote>
+<p>},
+&#8220;NewInternalPort&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewInternalPort&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;InternalPort&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;UI2&#8221;</div></blockquote>
+<p>},
+&#8220;value&#8221;: {</p>
+<blockquote>
+<div>&#8220;value&#8221;: 8123</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+&#8220;NewInternalClient&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewInternalClient&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;InternalClient&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
+<p>},
+&#8220;value&#8221;: &#8220;127.0.0.1&#8221;</p>
+</div></blockquote>
+<p>},
+&#8220;NewEnabled&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewEnabled&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingEnabled&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;BOOLEAN&#8221;</div></blockquote>
+<p>},
+&#8220;value&#8221;: true</p>
+</div></blockquote>
+<p>},
+&#8220;NewPortMappingDescription&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewPortMappingDescription&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingDescription&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
+<p>},
+&#8220;value&#8221;: &#8220;HHC Port Mapping&#8221;</p>
+</div></blockquote>
+<p>},
+&#8220;NewLeaseDuration&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;argument&#8221;: {</dt>
+<dd>&#8220;aliases&#8221;: [],
+&#8220;direction&#8221;: &#8220;OUT&#8221;,
+&#8220;name&#8221;: &#8220;NewLeaseDuration&#8221;,
+&#8220;relatedStateVariableName&#8221;: &#8220;PortMappingLeaseDuration&#8221;,
+&#8220;returnValue&#8221;: false</dd>
+</dl>
+<p>},
+&#8220;datatype&#8221;: {</p>
+<blockquote>
+<div>&#8220;builtin&#8221;: &#8220;UI4&#8221;</div></blockquote>
+<p>},
+&#8220;value&#8221;: {</p>
+<blockquote>
+<div>&#8220;value&#8221;: 0</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>}</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="upnp-event">
+<h2>### Upnp Event<a class="headerlink" href="#upnp-event" title="Permalink to this headline">¶</a></h2>
+<p>Upnp 디바이스에서 상태가 변경된 정보를 담고있습니다.</p>
+<p>##### Example</p>
+<p>~~~~javascript
+{</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;event&#8221;: [</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd><p class="first">&#8220;udn&#8221;: &#8220;311767bc-c98e-3a45-ffff-ffff81697049&#8221;,
+&#8220;currentValues&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;FamilyList&#8221;: {</dt>
+<dd><dl class="first docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;value&#8221;: null,
+&#8220;stateVariable&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;name&#8221;: &#8220;FamilyList&#8221;,
+&#8220;eventDetails&#8221;: {</p>
+<blockquote>
+<div>&#8220;sendEvents&#8221;: true,
+&#8220;eventMaximumRateMilliseconds&#8221;: 0,
+&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
+<p>},
+&#8220;service&#8221;: null,
+&#8220;typeDetails&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;defaultValue&#8221;: null,
+&#8220;allowedValues&#8221;: null,
+&#8220;allowedValueRange&#8221;: null</p>
+</div></blockquote>
+<p>},
+&#8220;moderatedNumericType&#8221;: false</p>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>},
+&#8220;Event&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;value&#8221;: &#8220;{n  &#8220;who&#8221;: &#8220;Father&#8221;,n  &#8220;where&#8221;: &#8220;Room1&#8221;,n  &#8220;type&#8221;: &#8220;Checkout&#8221;,n  &#8220;time&#8221;: 1390462617039n}&#8221;,
+&#8220;stateVariable&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;name&#8221;: &#8220;Event&#8221;,
+&#8220;eventDetails&#8221;: {</p>
+<blockquote>
+<div>&#8220;sendEvents&#8221;: true,
+&#8220;eventMaximumRateMilliseconds&#8221;: 0,
+&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
+<p>},
+&#8220;service&#8221;: null,
+&#8220;typeDetails&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;defaultValue&#8221;: null,
+&#8220;allowedValues&#8221;: null,
+&#8220;allowedValueRange&#8221;: null</p>
+</div></blockquote>
+<p>},
+&#8220;moderatedNumericType&#8221;: false</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+&#8220;Move&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;value&#8221;: null,
+&#8220;stateVariable&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;name&#8221;: &#8220;Move&#8221;,
+&#8220;eventDetails&#8221;: {</p>
+<blockquote>
+<div>&#8220;sendEvents&#8221;: true,
+&#8220;eventMaximumRateMilliseconds&#8221;: 0,
+&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
+<p>},
+&#8220;service&#8221;: null,
+&#8220;typeDetails&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;defaultValue&#8221;: null,
+&#8220;allowedValues&#8221;: null,
+&#8220;allowedValueRange&#8221;: null</p>
+</div></blockquote>
+<p>},
+&#8220;moderatedNumericType&#8221;: false</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+&#8220;SpaceList&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;value&#8221;: null,
+&#8220;stateVariable&#8221;: {</p>
+<blockquote>
+<div><p>&#8220;name&#8221;: &#8220;SpaceList&#8221;,
+&#8220;eventDetails&#8221;: {</p>
+<blockquote>
+<div>&#8220;sendEvents&#8221;: true,
+&#8220;eventMaximumRateMilliseconds&#8221;: 0,
+&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
+<p>},
+&#8220;service&#8221;: null,
+&#8220;typeDetails&#8221;: {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8220;datatype&#8221;: {</dt>
+<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
+&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
+</dl>
+<p>},
+&#8220;defaultValue&#8221;: null,
+&#8220;allowedValues&#8221;: null,
+&#8220;allowedValueRange&#8221;: null</p>
+</div></blockquote>
+<p>},
+&#8220;moderatedNumericType&#8221;: false</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+&#8220;serviceType&#8221;: {</p>
+<blockquote>
+<div>&#8220;namespace&#8221;: &#8220;schemas-upnp-org&#8221;,
+&#8220;type&#8221;: &#8220;ConditionInfoService&#8221;,
+&#8220;version&#8221;: 1</div></blockquote>
+<p>},
+&#8220;serviceId&#8221;: {</p>
+<blockquote>
+<div>&#8220;namespace&#8221;: &#8220;upnp-org&#8221;,
+&#8220;id&#8221;: &#8220;ConditionInfoService&#8221;</div></blockquote>
+<p class="last">},
+&#8220;date&#8221;: 1390462627123</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>],
+&#8220;time&#8221;: 1390462617423</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h3>}<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
@@ -65,14 +691,21 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Introduce</a><ul>
-<li><a class="reference internal" href="#id1">Introduce</a></li>
-<li><a class="reference internal" href="#model">Model</a></li>
-<li><a class="reference internal" href="#rest-api">Rest API</a></li>
+<li><a class="reference internal" href="#">Upnp Device Descriptor</a><ul>
+<li><a class="reference internal" href="#id1">개요</a></li>
+<li><a class="reference internal" href="#upnp-service-descriptor">### Upnp Service Descriptor</a></li>
+<li><a class="reference internal" href="#upnp-action-response">### Upnp Action Response</a></li>
+<li><a class="reference internal" href="#upnp-event">### Upnp Event</a><ul>
+<li><a class="reference internal" href="#id2">}</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduce.html"
+                        title="previous chapter">Introduce</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/model_jsonobject.txt"
@@ -101,6 +734,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="introduce.html" title="Introduce"
+             >previous</a> |</li>
         <li><a href="index.html">test 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
