@@ -90,7 +90,7 @@ actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 �
 
 Example::
 
-{
+  {
     "controlURI": "/etc/linuxigd/gateconnSCPD.ctl",
     "descriptorURI": "/etc/linuxigd/gateconnSCPD.xml",
     "eventSubscriptionURI": "/etc/linuxigd/gateconnSCPD.evt",
@@ -217,7 +217,7 @@ Example::
         },
         ...
     }
-}
+  }  
 
 
 Upnp Action Response
@@ -338,7 +338,7 @@ Example::
             "value": 0
         }
     }
-}
+  }
 
 
 Upnp Event
@@ -348,7 +348,7 @@ Upnp 디바이스에서 상태가 변경된 정보를 담고있습니다.
 
 Example::
 
-{
+  {
   "event": [
     {
       "udn": "311767bc-c98e-3a45-ffff-ffff81697049",
@@ -471,4 +471,4 @@ Example::
     }
   ],
   "time": 1390462617423
-}
+  }

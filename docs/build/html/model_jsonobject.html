@@ -134,481 +134,385 @@
 actions 배열에 있는 데이터를 참고해서 디바이스를 제어 할 수 있습니다.</p>
 <p>Example:</p>
 <div class="highlight-python"><div class="highlight"><pre>{
+  &quot;controlURI&quot;: &quot;/etc/linuxigd/gateconnSCPD.ctl&quot;,
+  &quot;descriptorURI&quot;: &quot;/etc/linuxigd/gateconnSCPD.xml&quot;,
+  &quot;eventSubscriptionURI&quot;: &quot;/etc/linuxigd/gateconnSCPD.evt&quot;,
+  &quot;actions&quot;: {
+      &quot;GetStatusInfo&quot;: {
+          &quot;arguments&quot;: [{
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewConnectionStatus&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;ConnectionStatus&quot;,
+              &quot;returnValue&quot;: false
+          }, {
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewLastConnectionError&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;LastConnectionError&quot;,
+              &quot;returnValue&quot;: false
+          }, {
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewUptime&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;Uptime&quot;,
+              &quot;returnValue&quot;: false
+          }],
+          &quot;inputArguments&quot;: [],
+          &quot;name&quot;: &quot;GetStatusInfo&quot;,
+          &quot;outputArguments&quot;: [{
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewConnectionStatus&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;ConnectionStatus&quot;,
+              &quot;returnValue&quot;: false
+          }, {
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewLastConnectionError&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;LastConnectionError&quot;,
+              &quot;returnValue&quot;: false
+          }, {
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewUptime&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;Uptime&quot;,
+              &quot;returnValue&quot;: false
+          }]
+      },
+      &quot;GetExternalIPAddress&quot;: {
+          &quot;arguments&quot;: [{
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewExternalIPAddress&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;ExternalIPAddress&quot;,
+              &quot;returnValue&quot;: false
+          }],
+          &quot;inputArguments&quot;: [],
+          &quot;name&quot;: &quot;GetExternalIPAddress&quot;,
+          &quot;outputArguments&quot;: [{
+              &quot;aliases&quot;: [],
+              &quot;direction&quot;: &quot;OUT&quot;,
+              &quot;name&quot;: &quot;NewExternalIPAddress&quot;,
+              &quot;relatedStateVariableName&quot;: &quot;ExternalIPAddress&quot;,
+              &quot;returnValue&quot;: false
+          }]
+      },
+      ...
+  },
+  &quot;serviceId&quot;: {
+      &quot;id&quot;: &quot;WANIPConn1&quot;,
+      &quot;namespace&quot;: &quot;upnp-org&quot;
+  },
+  &quot;serviceType&quot;: {
+      &quot;namespace&quot;: &quot;schemas-upnp-org&quot;,
+      &quot;type&quot;: &quot;WANIPConnection&quot;,
+      &quot;version&quot;: 1
+  },
+  &quot;stateVariables&quot;: {
+      &quot;PortMappingProtocol&quot;: {
+          &quot;eventDetails&quot;: {
+              &quot;eventMaximumRateMilliseconds&quot;: 0,
+              &quot;eventMinimumDelta&quot;: 0,
+              &quot;sendEvents&quot;: false
+          },
+          &quot;name&quot;: &quot;PortMappingProtocol&quot;,
+          &quot;type&quot;: {
+              &quot;allowedValueRange&quot;: null,
+              &quot;allowedValues&quot;: [&quot;TCP&quot;, &quot;UDP&quot;],
+              &quot;datatype&quot;: {
+                  &quot;builtin&quot;: &quot;STRING&quot;
+              },
+              &quot;defaultValue&quot;: null
+          }
+      },
+      &quot;Uptime&quot;: {
+          &quot;eventDetails&quot;: {
+              &quot;eventMaximumRateMilliseconds&quot;: 0,
+              &quot;eventMinimumDelta&quot;: 0,
+              &quot;sendEvents&quot;: false
+          },
+          &quot;name&quot;: &quot;Uptime&quot;,
+          &quot;type&quot;: {
+              &quot;allowedValueRange&quot;: null,
+              &quot;allowedValues&quot;: null,
+              &quot;datatype&quot;: {
+                  &quot;builtin&quot;: &quot;UI4&quot;
+              },
+              &quot;defaultValue&quot;: null
+          }
+      },
+      &quot;RSIPAvailable&quot;: {
+          &quot;eventDetails&quot;: {
+              &quot;eventMaximumRateMilliseconds&quot;: 0,
+              &quot;eventMinimumDelta&quot;: 0,
+              &quot;sendEvents&quot;: false
+          },
+          &quot;name&quot;: &quot;RSIPAvailable&quot;,
+          &quot;type&quot;: {
+              &quot;allowedValueRange&quot;: null,
+              &quot;allowedValues&quot;: null,
+              &quot;datatype&quot;: {
+                  &quot;builtin&quot;: &quot;BOOLEAN&quot;
+              },
+              &quot;defaultValue&quot;: null
+          }
+      },
+      ...
+  }
+}
 </pre></div>
 </div>
-<blockquote>
-<div><p>&#8220;controlURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.ctl&#8221;,
-&#8220;descriptorURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.xml&#8221;,
-&#8220;eventSubscriptionURI&#8221;: &#8220;/etc/linuxigd/gateconnSCPD.evt&#8221;,
-&#8220;actions&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;GetStatusInfo&#8221;: {</dt>
-<dd><dl class="first docutils">
-<dt>&#8220;arguments&#8221;: [{</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewConnectionStatus&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;ConnectionStatus&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-<dt>}, {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewLastConnectionError&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;LastConnectionError&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-<dt>}, {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewUptime&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;Uptime&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>}],
-&#8220;inputArguments&#8221;: [],
-&#8220;name&#8221;: &#8220;GetStatusInfo&#8221;,
-&#8220;outputArguments&#8221;: [{</p>
-<blockquote>
-<div>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewConnectionStatus&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;ConnectionStatus&#8221;,
-&#8220;returnValue&#8221;: false</div></blockquote>
-<dl class="docutils">
-<dt>}, {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewLastConnectionError&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;LastConnectionError&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-<dt>}, {</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewUptime&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;Uptime&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p class="last">}]</p>
-</dd>
-</dl>
-<p>},
-&#8220;GetExternalIPAddress&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;arguments&#8221;: [{</dt>
-<dd>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewExternalIPAddress&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;ExternalIPAddress&#8221;,
-&#8220;returnValue&#8221;: false</dd>
-</dl>
-<p>}],
-&#8220;inputArguments&#8221;: [],
-&#8220;name&#8221;: &#8220;GetExternalIPAddress&#8221;,
-&#8220;outputArguments&#8221;: [{</p>
-<blockquote>
-<div>&#8220;aliases&#8221;: [],
-&#8220;direction&#8221;: &#8220;OUT&#8221;,
-&#8220;name&#8221;: &#8220;NewExternalIPAddress&#8221;,
-&#8220;relatedStateVariableName&#8221;: &#8220;ExternalIPAddress&#8221;,
-&#8220;returnValue&#8221;: false</div></blockquote>
-<p>}]</p>
-</div></blockquote>
-</div></blockquote>
-<p>},
-&#8220;serviceId&#8221;: {</p>
-<blockquote>
-<div>&#8220;id&#8221;: &#8220;WANIPConn1&#8221;,
-&#8220;namespace&#8221;: &#8220;upnp-org&#8221;</div></blockquote>
-<p>},
-&#8220;serviceType&#8221;: {</p>
-<blockquote>
-<div>&#8220;namespace&#8221;: &#8220;schemas-upnp-org&#8221;,
-&#8220;type&#8221;: &#8220;WANIPConnection&#8221;,
-&#8220;version&#8221;: 1</div></blockquote>
-<p>},
-&#8220;stateVariables&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;PortMappingProtocol&#8221;: {</dt>
-<dd><dl class="first docutils">
-<dt>&#8220;eventDetails&#8221;: {</dt>
-<dd>&#8220;eventMaximumRateMilliseconds&#8221;: 0,
-&#8220;eventMinimumDelta&#8221;: 0,
-&#8220;sendEvents&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;name&#8221;: &#8220;PortMappingProtocol&#8221;,
-&#8220;type&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;allowedValueRange&#8221;: null,
-&#8220;allowedValues&#8221;: [&#8220;TCP&#8221;, &#8220;UDP&#8221;],
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;STRING&#8221;</div></blockquote>
-<p>},
-&#8220;defaultValue&#8221;: null</p>
-</div></blockquote>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>},
-&#8220;Uptime&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;eventDetails&#8221;: {</dt>
-<dd>&#8220;eventMaximumRateMilliseconds&#8221;: 0,
-&#8220;eventMinimumDelta&#8221;: 0,
-&#8220;sendEvents&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;name&#8221;: &#8220;Uptime&#8221;,
-&#8220;type&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;allowedValueRange&#8221;: null,
-&#8220;allowedValues&#8221;: null,
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;UI4&#8221;</div></blockquote>
-<p>},
-&#8220;defaultValue&#8221;: null</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-&#8220;RSIPAvailable&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;eventDetails&#8221;: {</dt>
-<dd>&#8220;eventMaximumRateMilliseconds&#8221;: 0,
-&#8220;eventMinimumDelta&#8221;: 0,
-&#8220;sendEvents&#8221;: false</dd>
-</dl>
-<p>},
-&#8220;name&#8221;: &#8220;RSIPAvailable&#8221;,
-&#8220;type&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;allowedValueRange&#8221;: null,
-&#8220;allowedValues&#8221;: null,
-&#8220;datatype&#8221;: {</p>
-<blockquote>
-<div>&#8220;builtin&#8221;: &#8220;BOOLEAN&#8221;</div></blockquote>
-<p>},
-&#8220;defaultValue&#8221;: null</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
 </div>
 <div class="section" id="upnp-action-response">
 <h2>Upnp Action Response<a class="headerlink" href="#upnp-action-response" title="Permalink to this headline">¶</a></h2>
 <p>Upnp 디바이스에 제어 메시지를 보냈을 때(Action)에 대한 응답 객체입니다.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre>{
-  &quot;NewRemoteHost&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewRemoteHost&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;RemoteHost&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;STRING&quot;
-      },
-      &quot;value&quot;: null
-  },
-  &quot;NewExternalPort&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewExternalPort&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;ExternalPort&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;UI2&quot;
-      },
-      &quot;value&quot;: {
-          &quot;value&quot;: 8123
-      }
-  },
-  &quot;NewProtocol&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewProtocol&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;PortMappingProtocol&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;STRING&quot;
-      },
-      &quot;value&quot;: &quot;TCP&quot;
-  },
-  &quot;NewInternalPort&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewInternalPort&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;InternalPort&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;UI2&quot;
-      },
-      &quot;value&quot;: {
-          &quot;value&quot;: 8123
-      }
-  },
-  &quot;NewInternalClient&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewInternalClient&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;InternalClient&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;STRING&quot;
-      },
-      &quot;value&quot;: &quot;127.0.0.1&quot;
-  },
-  &quot;NewEnabled&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewEnabled&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;PortMappingEnabled&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;BOOLEAN&quot;
-      },
-      &quot;value&quot;: true
-  },
-  &quot;NewPortMappingDescription&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewPortMappingDescription&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;PortMappingDescription&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;STRING&quot;
-      },
-      &quot;value&quot;: &quot;HHC Port Mapping&quot;
-  },
-  &quot;NewLeaseDuration&quot;: {
-      &quot;argument&quot;: {
-          &quot;aliases&quot;: [],
-          &quot;direction&quot;: &quot;OUT&quot;,
-          &quot;name&quot;: &quot;NewLeaseDuration&quot;,
-          &quot;relatedStateVariableName&quot;: &quot;PortMappingLeaseDuration&quot;,
-          &quot;returnValue&quot;: false
-      },
-      &quot;datatype&quot;: {
-          &quot;builtin&quot;: &quot;UI4&quot;
-      },
-      &quot;value&quot;: {
-          &quot;value&quot;: 0
-      }
-  }
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewRemoteHost&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;RemoteHost&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">null</span>
+  <span class="p">},</span>
+  <span class="s">&quot;NewExternalPort&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewExternalPort&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;ExternalPort&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI2&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="mi">8123</span>
+      <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s">&quot;NewProtocol&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewProtocol&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingProtocol&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;TCP&quot;</span>
+  <span class="p">},</span>
+  <span class="s">&quot;NewInternalPort&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalPort&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalPort&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI2&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="mi">8123</span>
+      <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s">&quot;NewInternalClient&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewInternalClient&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;InternalClient&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;127.0.0.1&quot;</span>
+  <span class="p">},</span>
+  <span class="s">&quot;NewEnabled&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewEnabled&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingEnabled&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;BOOLEAN&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">true</span>
+  <span class="p">},</span>
+  <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewPortMappingDescription&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingDescription&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;HHC Port Mapping&quot;</span>
+  <span class="p">},</span>
+  <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;argument&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;aliases&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s">&quot;direction&quot;</span><span class="p">:</span> <span class="s">&quot;OUT&quot;</span><span class="p">,</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;NewLeaseDuration&quot;</span><span class="p">,</span>
+          <span class="s">&quot;relatedStateVariableName&quot;</span><span class="p">:</span> <span class="s">&quot;PortMappingLeaseDuration&quot;</span><span class="p">,</span>
+          <span class="s">&quot;returnValue&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;UI4&quot;</span>
+      <span class="p">},</span>
+      <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>}</p>
 </div>
 <div class="section" id="upnp-event">
 <h2>Upnp Event<a class="headerlink" href="#upnp-event" title="Permalink to this headline">¶</a></h2>
 <p>Upnp 디바이스에서 상태가 변경된 정보를 담고있습니다.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre>{
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+<span class="s">&quot;event&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s">&quot;udn&quot;</span><span class="p">:</span> <span class="s">&quot;311767bc-c98e-3a45-ffff-ffff81697049&quot;</span><span class="p">,</span>
+    <span class="s">&quot;currentValues&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;FamilyList&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+          <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;stateVariable&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;FamilyList&quot;</span><span class="p">,</span>
+          <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">},</span>
+          <span class="s">&quot;service&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+          <span class="s">&quot;typeDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+              <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+            <span class="p">},</span>
+            <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span>
+          <span class="p">},</span>
+          <span class="s">&quot;moderatedNumericType&quot;</span><span class="p">:</span> <span class="n">false</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s">&quot;Event&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+          <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;{</span><span class="se">\n</span><span class="s">  </span><span class="se">\&quot;</span><span class="s">who</span><span class="se">\&quot;</span><span class="s">: </span><span class="se">\&quot;</span><span class="s">Father</span><span class="se">\&quot;</span><span class="s">,</span><span class="se">\n</span><span class="s">  </span><span class="se">\&quot;</span><span class="s">where</span><span class="se">\&quot;</span><span class="s">: </span><span class="se">\&quot;</span><span class="s">Room1</span><span class="se">\&quot;</span><span class="s">,</span><span class="se">\n</span><span class="s">  </span><span class="se">\&quot;</span><span class="s">type</span><span class="se">\&quot;</span><span class="s">: </span><span class="se">\&quot;</span><span class="s">Checkout</span><span class="se">\&quot;</span><span class="s">,</span><span class="se">\n</span><span class="s">  </span><span class="se">\&quot;</span><span class="s">time</span><span class="se">\&quot;</span><span class="s">: 1390462617039</span><span class="se">\n</span><span class="s">}&quot;</span><span class="p">,</span>
+        <span class="s">&quot;stateVariable&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Event&quot;</span><span class="p">,</span>
+          <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">},</span>
+          <span class="s">&quot;service&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+          <span class="s">&quot;typeDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+              <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+            <span class="p">},</span>
+            <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span>
+          <span class="p">},</span>
+          <span class="s">&quot;moderatedNumericType&quot;</span><span class="p">:</span> <span class="n">false</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s">&quot;Move&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+          <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;stateVariable&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Move&quot;</span><span class="p">,</span>
+          <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">},</span>
+          <span class="s">&quot;service&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+          <span class="s">&quot;typeDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+              <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+            <span class="p">},</span>
+            <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span>
+          <span class="p">},</span>
+          <span class="s">&quot;moderatedNumericType&quot;</span><span class="p">:</span> <span class="n">false</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s">&quot;SpaceList&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+          <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;stateVariable&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;SpaceList&quot;</span><span class="p">,</span>
+          <span class="s">&quot;eventDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;sendEvents&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s">&quot;eventMaximumRateMilliseconds&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;eventMinimumDelta&quot;</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">},</span>
+          <span class="s">&quot;service&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+          <span class="s">&quot;typeDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;datatype&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s">&quot;builtin&quot;</span><span class="p">:</span> <span class="s">&quot;STRING&quot;</span><span class="p">,</span>
+              <span class="s">&quot;displayString&quot;</span><span class="p">:</span> <span class="s">&quot;string&quot;</span>
+            <span class="p">},</span>
+            <span class="s">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValues&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;allowedValueRange&quot;</span><span class="p">:</span> <span class="n">null</span>
+          <span class="p">},</span>
+          <span class="s">&quot;moderatedNumericType&quot;</span><span class="p">:</span> <span class="n">false</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s">&quot;serviceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;schemas-upnp-org&quot;</span><span class="p">,</span>
+      <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;ConditionInfoService&quot;</span><span class="p">,</span>
+      <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="s">&quot;serviceId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">&quot;namespace&quot;</span><span class="p">:</span> <span class="s">&quot;upnp-org&quot;</span><span class="p">,</span>
+      <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;ConditionInfoService&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;date&quot;</span><span class="p">:</span> <span class="mi">1390462627123</span>
+  <span class="p">}</span>
+<span class="p">],</span>
+<span class="s">&quot;time&quot;</span><span class="p">:</span> <span class="mi">1390462617423</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;event&#8221;: [</dt>
-<dd><dl class="first docutils">
-<dt>{</dt>
-<dd><p class="first">&#8220;udn&#8221;: &#8220;311767bc-c98e-3a45-ffff-ffff81697049&#8221;,
-&#8220;currentValues&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;FamilyList&#8221;: {</dt>
-<dd><dl class="first docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;value&#8221;: null,
-&#8220;stateVariable&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;name&#8221;: &#8220;FamilyList&#8221;,
-&#8220;eventDetails&#8221;: {</p>
-<blockquote>
-<div>&#8220;sendEvents&#8221;: true,
-&#8220;eventMaximumRateMilliseconds&#8221;: 0,
-&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
-<p>},
-&#8220;service&#8221;: null,
-&#8220;typeDetails&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;defaultValue&#8221;: null,
-&#8220;allowedValues&#8221;: null,
-&#8220;allowedValueRange&#8221;: null</p>
-</div></blockquote>
-<p>},
-&#8220;moderatedNumericType&#8221;: false</p>
-</div></blockquote>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>},
-&#8220;Event&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;value&#8221;: &#8220;{n  &#8220;who&#8221;: &#8220;Father&#8221;,n  &#8220;where&#8221;: &#8220;Room1&#8221;,n  &#8220;type&#8221;: &#8220;Checkout&#8221;,n  &#8220;time&#8221;: 1390462617039n}&#8221;,
-&#8220;stateVariable&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;name&#8221;: &#8220;Event&#8221;,
-&#8220;eventDetails&#8221;: {</p>
-<blockquote>
-<div>&#8220;sendEvents&#8221;: true,
-&#8220;eventMaximumRateMilliseconds&#8221;: 0,
-&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
-<p>},
-&#8220;service&#8221;: null,
-&#8220;typeDetails&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;defaultValue&#8221;: null,
-&#8220;allowedValues&#8221;: null,
-&#8220;allowedValueRange&#8221;: null</p>
-</div></blockquote>
-<p>},
-&#8220;moderatedNumericType&#8221;: false</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-&#8220;Move&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;value&#8221;: null,
-&#8220;stateVariable&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;name&#8221;: &#8220;Move&#8221;,
-&#8220;eventDetails&#8221;: {</p>
-<blockquote>
-<div>&#8220;sendEvents&#8221;: true,
-&#8220;eventMaximumRateMilliseconds&#8221;: 0,
-&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
-<p>},
-&#8220;service&#8221;: null,
-&#8220;typeDetails&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;defaultValue&#8221;: null,
-&#8220;allowedValues&#8221;: null,
-&#8220;allowedValueRange&#8221;: null</p>
-</div></blockquote>
-<p>},
-&#8220;moderatedNumericType&#8221;: false</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-&#8220;SpaceList&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;value&#8221;: null,
-&#8220;stateVariable&#8221;: {</p>
-<blockquote>
-<div><p>&#8220;name&#8221;: &#8220;SpaceList&#8221;,
-&#8220;eventDetails&#8221;: {</p>
-<blockquote>
-<div>&#8220;sendEvents&#8221;: true,
-&#8220;eventMaximumRateMilliseconds&#8221;: 0,
-&#8220;eventMinimumDelta&#8221;: 0</div></blockquote>
-<p>},
-&#8220;service&#8221;: null,
-&#8220;typeDetails&#8221;: {</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;datatype&#8221;: {</dt>
-<dd>&#8220;builtin&#8221;: &#8220;STRING&#8221;,
-&#8220;displayString&#8221;: &#8220;string&#8221;</dd>
-</dl>
-<p>},
-&#8220;defaultValue&#8221;: null,
-&#8220;allowedValues&#8221;: null,
-&#8220;allowedValueRange&#8221;: null</p>
-</div></blockquote>
-<p>},
-&#8220;moderatedNumericType&#8221;: false</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-&#8220;serviceType&#8221;: {</p>
-<blockquote>
-<div>&#8220;namespace&#8221;: &#8220;schemas-upnp-org&#8221;,
-&#8220;type&#8221;: &#8220;ConditionInfoService&#8221;,
-&#8220;version&#8221;: 1</div></blockquote>
-<p>},
-&#8220;serviceId&#8221;: {</p>
-<blockquote>
-<div>&#8220;namespace&#8221;: &#8220;upnp-org&#8221;,
-&#8220;id&#8221;: &#8220;ConditionInfoService&#8221;</div></blockquote>
-<p class="last">},
-&#8220;date&#8221;: 1390462627123</p>
-</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>],
-&#8220;time&#8221;: 1390462617423</p>
-</div></blockquote>
-<p>}</p>
 </div>
 </div>
 
